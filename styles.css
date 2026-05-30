@@ -166,9 +166,13 @@ a:hover {
   white-space: nowrap;
 }
 .marquee-track {
-  display: inline-block;
+  display: flex;
+  width: max-content;
   animation: scroll 30s linear infinite;
-  padding-right: 2rem;
+}
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
 }
 .marquee-track span {
   padding: 0 1.5rem;
@@ -181,7 +185,7 @@ a:hover {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% / var(--marquee-copies, 2)));
   }
 }
 

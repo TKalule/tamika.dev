@@ -159,6 +159,13 @@
             <p class="card-label">Previously</p>
             <ul class="card-list">
               <li>
+                <span class="year">2026</span>
+                <span
+                  >Imperial College London - Reality of Working in STEM ·
+                  <em>Panelist</em></span
+                >
+              </li>
+              <li>
                 <span class="year">2024</span>
                 <span
                   >Black Tech Fest - Tomorrow's Tech Stack Today ·
@@ -459,18 +466,32 @@
       (function () {
         const track = document.querySelector("[data-marquee]");
         if (!track) return;
+        const container = track.parentElement;
         const items = track.dataset.marquee
           .split(",")
           .map((s) => s.trim())
           .filter(Boolean);
-        const build = () =>
-          items
-            .map(
-              (item) =>
-                `<span>${item}</span><span class="dot">●</span> `,
-            )
-            .join("");
-        track.innerHTML = build() + build();
+        const groupHTML = items
+          .map((item) => `<span>${item}</span><span class="dot">●</span>`)
+          .join("");
+        const render = () => {
+          track.innerHTML = `<div class="marquee-group">${groupHTML}</div>`;
+          let copies = 1;
+          while (track.scrollWidth < container.offsetWidth * 2 && copies < 30) {
+            track.insertAdjacentHTML(
+              "beforeend",
+              `<div class="marquee-group">${groupHTML}</div>`,
+            );
+            copies++;
+          }
+          track.style.setProperty("--marquee-copies", copies);
+        };
+        render();
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(render, 200);
+        });
       })();
       (function () {
         const btn = document.querySelector(".to-top");
