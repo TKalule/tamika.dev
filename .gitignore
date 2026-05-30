@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# IDE / editor folders
+.idea/
+.vscode/
+
+# Node tooling (preventative)
+node_modules/
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+
+# Misc.
+docs/
