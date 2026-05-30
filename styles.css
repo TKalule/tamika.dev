@@ -521,6 +521,43 @@ footer {
   letter-spacing: 0.05em;
 }
 
+/* BACK-TO-TOP */
+.to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--bg);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(42, 26, 16, 0.12);
+}
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* RESPONSIVE */
 @media (max-width: 760px) {
   .hero {
