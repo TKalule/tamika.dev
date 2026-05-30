@@ -230,15 +230,18 @@ h2 em {
 /* SERVICES */
 .services {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
   margin-top: 2rem;
 }
 .service {
   background: var(--bg-deep);
   padding: 2rem;
   border-radius: 8px;
-  position: relative;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 .service .num {
   font-family: var(--serif);
@@ -246,7 +249,6 @@ h2 em {
   font-size: 2rem;
   color: var(--accent);
   line-height: 1;
-  margin-bottom: 1rem;
   display: block;
 }
 .service h3 {
@@ -572,8 +574,10 @@ footer {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .services {
-    grid-template-columns: 1fr;
+  .service {
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
   }
   .work-grid {
     grid-template-columns: 1fr;
