@@ -7,8 +7,7 @@
   --accent-2: #b25334;
   --rule: #d8cab2;
   --serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  --sans:
-    "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -296,6 +295,14 @@ h2 em {
 }
 .service .card-list em {
   color: var(--ink-soft);
+}
+.service .card-list li:not(:has(.year)) {
+  display: block;
+}
+.service .card-list li:not(:has(.year))::before {
+  content: "\2022";
+  color: var(--accent);
+  margin-right: 0.6rem;
 }
 
 /* GALLERY */
