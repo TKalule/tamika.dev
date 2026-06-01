@@ -1,532 +1,1216 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamika Kalule — Product & Engineering Lead</title>
+    <title>Tamika Kalule — Product &amp; Engineering Lead</title>
     <meta
       name="description"
-      content="Tamika Kalule — Product & Engineering Lead in London. Bridging product, engineering and design."
+      content="Tamika Kalule — a product and engineering lead working at the intersection of strategy and delivery. London."
     />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232a1a10'/%3E%3Ctext x='16' y='22' font-family='Fraunces,Georgia,serif' font-weight='600' font-size='15' fill='%23ce98ad' text-anchor='middle'%3Etk%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Open Graph / social preview -->
     <meta
       property="og:title"
       content="Tamika Kalule — Product & Engineering Lead"
     />
     <meta
       property="og:description"
-      content="Bridging product, engineering and design. London."
+      content="Working at the intersection of strategy and delivery. London."
     />
-    <meta property="og:image" content="images/avatar.jpg" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tamika.dev" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+    <!-- No-FOUC theme bootstrap: set the theme before first paint -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("tk-theme");
+          if (t !== "light" && t !== "dark") t = "dark";
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+        document.documentElement.classList.add("js");
+      })();
+    </script>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="top-bar">
-      <span><strong>Tamika Kalule</strong></span>
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="top-nav"
-        aria-label="Open menu"
+    <button
+      class="nav-toggle"
+      id="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="bars" aria-hidden="true"
+        ><span></span><span></span><span></span
+      ></span>
+    </button>
+
+    <nav
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-label="Mobile menu"
+      aria-hidden="true"
+    >
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
       >
-        <svg
-          class="icon-menu"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
-        <svg
-          class="icon-close"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-      <nav class="top-nav" id="top-nav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
 
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Hi, <em>I'm Tamika.</em></h1>
-        <p class="hero-sub">
-          A product &amp; engineering lead working at the intersection of
-          strategy and delivery.
-        </p>
-        <p class="hero-meta">
-          London · <a href="mailto:tamika.kalule@gmail.com">Email</a> ·
-          <a href="https://www.linkedin.com/in/tamika-kalule/">LinkedIn</a>
-        </p>
-      </div>
-      <div>
-        <div class="portrait-frame">
-          <img src="images/avatar.jpg" alt="Portrait of Tamika Kalule" />
-          <span class="badge">Currently · JP Morgan</span>
-        </div>
-      </div>
-    </section>
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch colour theme"
+    >
+      <svg
+        class="ico-sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path
+          d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"
+        />
+      </svg>
+      <svg
+        class="ico-moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"
+      >
+        <path d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z" />
+      </svg>
+    </button>
 
-    <div class="marquee" aria-hidden="true">
-      <div
-        class="marquee-track"
-        data-marquee="Builder,Consultant,Speaker,Mentor"
-      ></div>
-    </div>
+    <div class="scroll-progress" id="progress" aria-hidden="true"></div>
 
-    <section id="about">
-      <p class="label">A bit about me</p>
-      <h2>Nine years in regulated <em>fintech and banking.</em></h2>
-      <div class="two-col">
-        <div class="body">
-          <p>
-            I lead product and engineering inside regulated fintech — the kind
-            of environment where every integration has an edge case and every
-            decision has a stakeholder.
-          </p>
-          <p>
-            I started out as an engineer, moved through product, and now run
-            teams. That path is the point: I write specs engineers can build,
-            make build-vs-buy calls that hold up, and speak fluently across
-            product, design and ops.
-          </p>
-        </div>
-        <div class="body">
-          <p>
-            Currently leading an engineering team at JP Morgan in London while
-            finishing an MSc in Software Engineering at the University of
-            Oxford.
-          </p>
-          <p>
-            Outside the day role, I take on a small number of consulting,
-            speaking and mentoring engagements where I can actually move the
-            needle.
-          </p>
-        </div>
-      </div>
-    </section>
+    <nav class="rail" aria-label="Section navigation">
+      <a href="#hero" data-rail="hero"
+        ><span class="label">intro</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+      <a href="#about" data-rail="about"
+        ><span class="label">about</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+      <a href="#services" data-rail="services"
+        ><span class="label">services</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+      <a href="#experience" data-rail="experience"
+        ><span class="label">experience</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+      <a href="#education" data-rail="education"
+        ><span class="label">education</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+      <a href="#contact" data-rail="contact"
+        ><span class="label">contact</span
+        ><span class="dot" aria-hidden="true"></span
+      ></a>
+    </nav>
 
-    <section id="services">
-      <p class="label">Work with me</p>
-      <h2>Four roles I take on <em>outside the day role.</em></h2>
-      <div class="services">
-        <div class="service">
-          <span class="num">01</span>
-          <div class="service-body">
-            <h3>AI Builder</h3>
-            <p>
-              Rapid prototyping with AI tooling — bringing engineering rigour
-              and product instinct to the work, so the output is something you
-              can actually build from, not just a demo. Working prototypes using
-              tools like Claude, Cursor, Replit and Figma Make.
-            </p>
-            <p class="card-label">Typical engagements:</p>
-            <ul class="card-list">
-              <li>Validation Sprints</li>
-              <li>Proof-of-concept Builds</li>
-              <li>Discovery Prototyping</li>
-            </ul>
+    <main id="content">
+      <!-- ============ HERO ============ -->
+      <header class="hero" id="hero">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-veil" aria-hidden="true"></div>
+        <div class="wrap">
+          <p class="hero-eyebrow">
+            <span class="pulse" aria-hidden="true"></span>Product &amp;
+            Engineering Lead &middot; London
+          </p>
+          <h1 class="hero-name" aria-label="Tamika Kalule">
+            <span class="line"><span data-hero>Tamika</span></span>
+            <span class="line grad-text"><span data-hero>Kalule</span></span>
+          </h1>
+          <p class="hero-tag" data-hero-fade>
+            Working at the <b>intersection of strategy and delivery</b> —
+            product &amp; engineering.
+          </p>
+          <div class="hero-meta" data-hero-fade>
+            <a
+              class="hero-cta"
+              id="magnet"
+              href="https://calendly.com/tamika-kalule/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Book a 30-min intro</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="hero-secondary" href="#services">See services</a>
           </div>
         </div>
-        <div class="service">
-          <span class="num">02</span>
-          <div class="service-body">
-            <h3>Consultant</h3>
-            <p>
-              Helping product and engineering teams make sharper technical and
-              product decisions in complex environments — build-vs-buy
-              evaluations, platform and integration strategy, tool and
-              technology choices.
-            </p>
-            <p class="card-label">Typical engagements:</p>
-            <ul class="card-list">
-              <li>Build-vs-buy Reviews</li>
-              <li>Platform Architecture Reviews</li>
-              <li>Tooling Strategy</li>
-            </ul>
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="mouse"></span>
+          <span>scroll</span>
+        </div>
+      </header>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section-pad" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-kicker"
+              >About<span class="section-num">01 / 06</span></span
+            >
+            <h2 class="section-title" id="about-title">
+              Strategy and <em>delivery</em>
+            </h2>
+          </div>
+
+          <div class="about-grid">
+            <div>
+              <p class="about-lede reveal">
+                I lead product and engineering inside
+                <em>regulated fintech</em>. I started out as an engineer, moved
+                through product, and now
+                <span class="accent-word">run teams</span> — writing specs
+                engineers can build and make build-vs-buy calls that hold up,
+                and speak fluently across <em>product, design and ops</em>.
+              </p>
+            </div>
+            <figure class="portrait-figure reveal" data-parallax="0.1">
+              <div class="portrait-frame">
+                <img
+                  src="./images/avatar.jpg"
+                  alt="Tamika Kalule"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <span class="portrait-ring" aria-hidden="true"></span>
+              <figcaption class="pcap">Tamika Kalule &mdash; London</figcaption>
+            </figure>
+          </div>
+
+          <div class="stats" id="stats" aria-label="By the numbers">
+            <div class="stat">
+              <div class="num"><span data-count="9">0</span></div>
+              <div class="lbl">Years in fintech &amp; banking</div>
+            </div>
+            <div class="stat">
+              <div class="num"><span data-count="2">0</span></div>
+              <div class="lbl">Distributed teams led</div>
+            </div>
+            <div class="stat">
+              <div class="num">
+                <span data-count="1000">0</span><span class="suffix">s</span>
+              </div>
+              <div class="lbl">Internal users &amp; partners served</div>
+            </div>
           </div>
         </div>
-        <div class="service">
-          <span class="num">03</span>
-          <div class="service-body">
-            <h3>Speaker</h3>
-            <p>
-              Talks on product, engineering, the future of tech, women in IT,
-              and how to break into tech.
-            </p>
-            <p class="card-label">Previously</p>
-            <ul class="card-list">
-              <li>
-                <span class="year">2026</span>
-                <span>Imperial College London · <em>Panelist</em></span>
-              </li>
-              <li>
-                <span class="year">2024</span>
-                <span>Black Tech Fest · <em>Moderator</em></span>
-              </li>
-              <!-- <li>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section class="section-pad" id="services" aria-labelledby="svc-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-kicker"
+              >Services<span class="section-num">02 / 05</span></span
+            >
+            <h2 class="section-title" id="svc-title">
+              Outside the day role I'm a
+              <em class="svc-rotator"
+                ><span
+                  class="svc-rotator-word"
+                  data-words="Builder,Consultant,Speaker,Mentor"
+                  aria-live="polite"
+                ></span
+                ><span class="svc-rotator-caret" aria-hidden="true">|</span></em
+              >
+            </h2>
+          </div>
+
+          <div class="services-grid">
+            <div class="svc-card">
+              <h3 class="svc-name">AI Builder</h3>
+              <p class="svc-lead">
+                Rapid prototyping with AI tooling — bringing engineering rigour
+                and product instinct to the work, so the output is something you
+                can <em>actually build from</em>, not just a demo.
+              </p>
+              <p class="card-label">Typical engagements:</p>
+              <ul class="card-list">
+                <li>Validation Sprints</li>
+                <li>Proof-of-concept Builds</li>
+                <li>Discovery Prototyping</li>
+              </ul>
+            </div>
+
+            <div class="svc-card">
+              <h3 class="svc-name">Consultant</h3>
+              <p class="svc-lead">
+                Helping product and engineering teams make
+                <em>sharper</em> technical and product decisions in complex
+                environments — build-vs-buy, platform and integration strategy,
+                tool and technology choices.
+              </p>
+              <p class="card-label">Typical engagements:</p>
+              <ul class="card-list">
+                <li>Build-vs-buy Reviews</li>
+                <li>Platform Architecture Reviews</li>
+                <li>Tooling Strategy</li>
+              </ul>
+            </div>
+
+            <div class="svc-card">
+              <h3 class="svc-name">Speaker</h3>
+              <p class="svc-lead">
+                Talks on product, engineering, the <em>future of tech</em>,
+                women in IT, and how to break into tech.
+              </p>
+              <p class="card-label">Previously</p>
+              <ul class="card-list">
+                <li>
+                  <span class="year">2026</span>
+                  <span>Imperial College London · <em>Panelist</em></span>
+                </li>
+                <li>
+                  <span class="year">2024</span>
+                  <span>Black Tech Fest · <em>Moderator</em></span>
+                </li>
+                <!-- <li>
                 <span class="year">2024</span>
                 <span
                   >JP Morgan - Women in IT Networking Event ·
                   <em>Moderator</em></span
                 >
               </li> -->
-              <li>
-                <span class="year">2024</span>
-                <span>Code for Good Hackathon · <em>Judge</em></span>
-              </li>
-            </ul>
+                <li>
+                  <span class="year">2024</span>
+                  <span>Code for Good Hackathon · <em>Judge</em></span>
+                </li>
+              </ul>
+            </div>
+            <div class="svc-card">
+              <h3 class="svc-name">Mentor</h3>
+              <p class="svc-lead">
+                One-to-one with students, emerging product managers and
+                engineers, and people considering a <em>move into tech.</em>
+              </p>
+              <p class="card-label">Previously</p>
+              <ul class="card-list">
+                <li>
+                  <span class="year">2024</span>
+                  <span>The Sutton Trust</span>
+                </li>
+                <li>
+                  <span class="year">2020</span>
+                  <span>Finding Ada Network</span>
+                </li>
+                <li>
+                  <span class="year">2018</span>
+                  <span>Success Looks Like You</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="service">
-          <span class="num">04</span>
-          <div class="service-body">
-            <h3>Mentor</h3>
-            <p>
-              One-to-one with students, emerging product managers and engineers,
-              and people considering a move into tech.
-            </p>
-            <p class="card-label">Previously</p>
-            <ul class="card-list">
-              <li>
-                <span class="year">2024</span>
-                <span>The Sutton Trust</span>
-              </li>
-              <li>
-                <span class="year">2020</span>
-                <span>Finding Ada Network</span>
-              </li>
-              <li>
-                <span class="year">2018</span>
-                <span>Success Looks Like You</span>
-              </li>
-            </ul>
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="section-pad" id="experience" aria-labelledby="exp-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-kicker"
+              >Experience<span class="section-num">03 / 05</span></span
+            >
+            <h2 class="section-title" id="exp-title">
+              Where I've <em>worked</em>
+            </h2>
+          </div>
+
+          <div class="exp-wrap">
+            <div class="exp-list">
+              <article class="exp-item reveal">
+                <div class="exp-when">
+                  2026 — Present
+                  <span class="exp-badge"
+                    ><span class="pulse" aria-hidden="true"></span>Current
+                    role</span
+                  >
+                </div>
+                <div>
+                  <h3 class="exp-role">
+                    <span class="co">Engineering Manager</span>
+                  </h3>
+                  <p class="exp-desc">
+                    Lead two distributed teams running an internal developer
+                    platform. Own roadmap, OKRs and delivery; primary escalation
+                    for users; drive AI-assisted documentation workflows.
+                  </p>
+                </div>
+              </article>
+
+              <article class="exp-item reveal">
+                <div class="exp-when">2023 — 2026</div>
+                <div>
+                  <h3 class="exp-role">
+                    <span class="co">Product Manager</span>
+                  </h3>
+                  <p class="exp-desc">
+                    Owned product end-to-end for an interconnected platform
+                    serving thousands of internal users and external integrator
+                    partners. Led discovery, wrote PRDs and ran build-vs-buy
+                    evaluations — including the case to decommission a costly
+                    vendor system in favour of an in-house build.
+                  </p>
+                </div>
+              </article>
+
+              <article class="exp-item reveal">
+                <div class="exp-when">2019 — 2023</div>
+                <div>
+                  <h3 class="exp-role">
+                    <span class="co">Software Engineer</span>
+                  </h3>
+                  <p class="exp-desc">
+                    Partnered with vendor teams on integrations, owned
+                    externally-facing features end-to-end, and modernised a
+                    legacy platform with Angular and NgRx.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <figure class="exp-figure">
+              <img
+                src="./images/IMG_3767.jpg"
+                alt="Tamika at work with laptop"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </div>
-      </div>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/IMG_3803.jpg" alt="Portrait of Tamika Kalule" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/IMG_3767.jpg" alt="Tamika at work with laptop" />
-        </div>
-        <div class="gallery-item">
-          <img
-            src="images/IMG_3798.jpg"
-            alt="Tamika in studio, magazines on the floor"
-          />
-        </div>
-      </div>
-      <div class="inline-cta">
-        <a
-          class="email-btn secondary"
-          href="https://calendly.com/tamika-kalule/30min"
-          target="_blank"
-          rel="noopener"
-          >Book a 30-min intro call</a
-        >
-      </div>
-    </section>
+      </section>
 
-    <section id="experience">
-      <p class="label">Experience</p>
-      <h2>Where I've worked.</h2>
+      <!-- ============ education ============ -->
+      <section class="section-pad" id="education" aria-labelledby="cred-title">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="section-kicker"
+              >education<span class="section-num">04 / 05</span></span
+            >
+            <h2 class="section-title" id="cred-title">
+              Where I <em>trained</em>
+            </h2>
+          </div>
 
-      <div class="work-grid">
-        <div class="year">2026–Now</div>
-        <div class="role">
-          <h3>Engineering Manager</h3>
-          <!-- <p class="where">JP Morgan Chase · London</p> -->
-          <p>
-            Lead two distributed teams running an internal developer platform.
-            Own roadmap, OKRs and delivery; primary escalation for users; drive
-            AI-assisted documentation workflows.
-          </p>
-        </div>
-      </div>
-
-      <div class="work-grid">
-        <div class="year">2023–2026</div>
-        <div class="role">
-          <h3>Product Manager</h3>
-          <!-- <p class="where">JP Morgan Chase · London</p> -->
-          <p>
-            Owned product end-to-end for an interconnected platform serving
-            thousands of internal users and external integrator partners. Led
-            discovery, wrote PRDs and ran build-vs-buy evaluations — including
-            the case to decommission a costly vendor system in favour of an
-            in-house build.
-          </p>
-        </div>
-      </div>
-
-      <div class="work-grid">
-        <div class="year">2019–2023</div>
-        <div class="role">
-          <h3>Software Engineer</h3>
-          <!-- <p class="where">JP Morgan Chase · London</p> -->
-          <p>
-            Partnered with vendor teams on integrations, owned externally-facing
-            features end-to-end, modernised a legacy platform with Angular and
-            NgRx.
-          </p>
-        </div>
-      </div>
-
-      <!-- <div class="work-grid">
-        <div class="year">2017–2019</div>
-        <div class="role">
-          <h3>Software Engineer</h3>
-          <p class="where">Standard Chartered Bank · London</p>
-          <p>
-            Refactored monolith services to microservices on Docker /
-            Kubernetes. Automated deployments with Jenkins and Ansible. Built
-            internal tracking tools in Python.
-          </p>
-        </div>
-      </div> -->
-    </section>
-
-    <section id="education">
-      <p class="label">Education</p>
-      <h2>Where I trained.</h2>
-      <div class="education-grid">
-        <div class="education-item">
-          <a
-            href="https://www.ox.ac.uk/admissions/graduate/courses/msc-software-engineering"
-            target="_blank"
-            rel="noopener"
-          >
-            <h3>MSc Software Engineering</h3>
-            <p class="meta">University of Oxford · 2024–Now</p>
-            <p>
-              Modules include: Agile Methods, Interaction Design, Classical
-              Machine Learning and 7 more.
-            </p>
-            <div class="school-logo">
-              <img src="images/logos/oxford.svg" alt="University of Oxford" />
+          <div class="edu-grid">
+            <div class="edu-card">
+              <p class="edu-deg">MSc Software Engineering</p>
+              <p class="edu-meta">University of Oxford &middot; 2024 – Now</p>
+              <p class="edu-note">
+                Modules include Agile Methods, Interaction Design, Classical
+                Machine Learning and 7 more.
+              </p>
+              <img
+                class="edu-logo"
+                src="./images/logos/oxford.svg"
+                alt="University of Oxford"
+                loading="lazy"
+              />
             </div>
-          </a>
-        </div>
-        <div class="education-item">
-          <a href="https://www.fdmgroup.com/" target="_blank" rel="noopener">
-            <h3>Java Developer Training</h3>
-            <p class="meta">FDM Group · 2017</p>
-            <p>
-              Modules include: Object Oriented Development, Web Development,
-              Database Design and 10 more.
-            </p>
-            <div class="school-logo">
-              <img src="images/logos/fdm.svg" alt="FDM Group" />
+            <div class="edu-card">
+              <p class="edu-deg">Java Developer Training</p>
+              <p class="edu-meta">FDM Group &middot; 2017</p>
+              <p class="edu-note">
+                Object-Oriented Development, Web Development, Database Design
+                and 10 more.
+              </p>
+              <img
+                class="edu-logo"
+                src="./images/logos/fdm.svg"
+                alt="FDM Group"
+                loading="lazy"
+              />
             </div>
-          </a>
-        </div>
-        <div class="education-item">
-          <a
-            href="https://www.aston.ac.uk/study/courses/biomedical-science-bsc"
-            target="_blank"
-            rel="noopener"
-          >
-            <h3>BSc Applied Biomedical Science</h3>
-            <p class="meta">Aston University · 2012–16</p>
-            <p>
-              Trained and worked as an HCPC-registered Biomedical Scientist in
-              NHS pathology before retraining into software.
-            </p>
-            <div class="school-logo">
-              <img src="images/logos/aston.svg" alt="Aston University" />
+            <div class="edu-card">
+              <p class="edu-deg">BSc Applied Biomedical Science</p>
+              <p class="edu-meta">Aston University &middot; 2012 – 16</p>
+              <p class="edu-note">
+                An HCPC-registered Biomedical Scientist in NHS pathology before
+                retraining into software.
+              </p>
+              <img
+                class="edu-logo"
+                src="./images/logos/aston.svg"
+                alt="Aston University"
+                loading="lazy"
+              />
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
+          </div>
 
-    <div class="recog-edu">
-      <div class="recog-edu-inner">
-        <div>
-          <p class="label">Recognition</p>
-          <h2 style="font-size: 2rem">Awards &amp; press.</h2>
-          <ul>
-            <li>
+          <div class="recognition">
+            <div class="rec-col">
+              <h3>Awards &amp; press</h3>
               <a
+                class="rec-row rec-link"
                 href="https://www.blackbusinessexperience.com/black-tech-achievement-awards/bta-top-50"
                 target="_blank"
-                rel="noopener"
-                ><strong>BTA Top 50</strong> · Black Tech Achievement · 2026</a
+                rel="noopener noreferrer"
+                ><span class="rec-name"
+                  ><strong>BTA Top 50</strong>
+                  <span class="src">&middot; Black Tech Achievement</span></span
+                ><span class="rec-yr">2026</span></a
               >
-            </li>
-            <li>
               <a
+                class="rec-row rec-link"
                 href="https://www.information-age.com/women-in-it-tamika-kalule-at-jpmorgan-chase-123506529/"
                 target="_blank"
-                rel="noopener"
-                ><strong>Women in IT</strong> · DiversityQ · 2023</a
+                rel="noopener noreferrer"
+                ><span class="rec-name"
+                  ><strong>Women in IT</strong>
+                  <span class="src">&middot; DiversityQ</span></span
+                ><span class="rec-yr">2023</span></a
               >
-            </li>
-            <li>
               <a
+                class="rec-row rec-link"
                 href="https://wearetechwomen.com/techwomen100-awards-winners-2021/"
                 target="_blank"
-                rel="noopener"
-                ><strong>TechWomen100</strong> · WeAreTechWomen · 2021</a
+                rel="noopener noreferrer"
+                ><span class="rec-name"
+                  ><strong>TechWomen100</strong>
+                  <span class="src">&middot; WeAreTechWomen</span></span
+                ><span class="rec-yr">2021</span></a
               >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p class="label">Certifications</p>
-          <h2 style="font-size: 2rem">Always learning.</h2>
-          <ul>
-            <li>
+            </div>
+            <div class="rec-col">
+              <h3>Certifications</h3>
               <a
+                class="rec-row rec-link"
                 href="https://www.datacamp.com/completed/statement-of-accomplishment/course/f6b80b81d20ca388726b2d922b101e04e994cc9d"
                 target="_blank"
-                rel="noopener"
-                ><strong>LLMOps Concepts</strong> · DataCamp · 2025</a
+                rel="noopener noreferrer"
+                ><span class="rec-name"
+                  ><strong>LLMOps Concepts</strong>
+                  <span class="src">&middot; DataCamp</span></span
+                ><span class="rec-yr">2025</span></a
               >
-            </li>
-            <!-- <li>
-              <a
-                href="https://www.datacamp.com/completed/statement-of-accomplishment/course/9e106848080a96c45b53c277cbdfe518679f676d"
-                target="_blank"
-                rel="noopener"
-                ><strong>Gen AI Concepts</strong> · DataCamp · 2025</a
-              >
-            </li> -->
-            <li>
-              <strong>AWS Cloud Practitioner</strong> · Amazon Web Services ·
-              2023
-            </li>
-            <li>
-              <strong>Certified Scrum Master</strong> · Scrum Alliance · 2023
-            </li>
-          </ul>
+              <div class="rec-row">
+                <span class="rec-name"
+                  ><strong>AWS Cloud Practitioner</strong>
+                  <span class="src">&middot; Amazon Web Services</span></span
+                ><span class="rec-yr">2023</span>
+              </div>
+              <div class="rec-row">
+                <span class="rec-name"
+                  ><strong>Certified Scrum Master</strong>
+                  <span class="src">&middot; Scrum Alliance</span></span
+                ><span class="rec-yr">2023</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <section class="contact" id="contact">
-      <p class="label">Get in touch</p>
-      <h2>Have a project, a speaking slot, or just want to say hello?</h2>
-      <div class="cta-buttons">
-        <a class="email-btn" href="mailto:tamika.kalule@gmail.com">Email</a>
-        <a
-          class="email-btn secondary"
-          href="https://calendly.com/tamika-kalule/30min"
-          target="_blank"
-          rel="noopener"
-          >Call</a
-        >
-      </div>
-    </section>
-
-    <footer>© 2026 Tamika Kalule · Built with care in London</footer>
-    <button class="to-top" type="button" aria-label="Back to top">
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
+      <!-- ============ CONTACT ============ -->
+      <section
+        class="section-pad contact"
+        id="contact"
+        aria-labelledby="contact-title"
       >
-        <line x1="12" y1="19" x2="12" y2="5" />
-        <polyline points="5 12 12 5 19 12" />
-      </svg>
-    </button>
+        <div class="wrap contact-inner">
+          <span class="section-kicker reveal" style="justify-content: center"
+            >Contact<span class="section-num" style="margin-left: 12px"
+              >05 / 05</span
+            ></span
+          >
+          <h2
+            class="contact-title reveal"
+            id="contact-title"
+            style="margin-top: 18px"
+          >
+            Let's build something <em>that holds up.</em>
+          </h2>
+
+          <div class="reveal">
+            <a
+              class="contact-cta"
+              href="https://calendly.com/tamika-kalule/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Book a 30-min intro</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="socials reveal">
+            <a
+              class="social"
+              href="https://www.linkedin.com/in/tamika-kalule/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0z"
+                />
+              </svg>
+              LinkedIn
+            </a>
+            <a class="social" href="mailto:tamika.kalule@gmail.com">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+              >
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                <path d="m3 6 9 7 9-7" />
+              </svg>
+              Email
+            </a>
+            <a
+              class="social"
+              href="https://calendly.com/tamika-kalule/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+              >
+                <rect x="3.5" y="4.5" width="17" height="16" rx="2.5" />
+                <path d="M3.5 9h17M8 2.5v4M16 2.5v4" />
+              </svg>
+              Calendly
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap foot-row">
+          <span class="brand">&copy; 2026 <b>Tamika Kalule</b></span>
+          <span>Product &amp; engineering lead — London.</span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- ============ LIBS ============ -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"
+      integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script>
       (function () {
-        const bar = document.querySelector(".top-bar");
-        const toggle = document.querySelector(".nav-toggle");
-        if (!bar || !toggle) return;
-        const setOpen = (open) => {
-          bar.classList.toggle("is-open", open);
-          toggle.setAttribute("aria-expanded", open ? "true" : "false");
-          toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-        };
-        toggle.addEventListener("click", () =>
-          setOpen(!bar.classList.contains("is-open")),
-        );
-        bar.querySelectorAll(".top-nav a").forEach((a) => {
-          a.addEventListener("click", () => setOpen(false));
-        });
-      })();
-      (function () {
-        const track = document.querySelector("[data-marquee]");
-        if (!track) return;
-        const container = track.parentElement;
-        const items = track.dataset.marquee
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean);
-        const groupHTML = items
-          .map((item) => `<span>${item}</span><span class="dot">●</span>`)
-          .join("");
-        const render = () => {
-          track.innerHTML = `<div class="marquee-group">${groupHTML}</div>`;
-          let copies = 1;
-          while (track.scrollWidth < container.offsetWidth * 2 && copies < 30) {
-            track.insertAdjacentHTML(
-              "beforeend",
-              `<div class="marquee-group">${groupHTML}</div>`,
+        "use strict";
+
+        const root = document.documentElement;
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        const isTouch = window.matchMedia("(pointer: coarse)").matches;
+        const hasGSAP = typeof window.gsap !== "undefined";
+
+        /* -------------------------------------------------
+     THEME TOGGLE (always works, no GSAP required)
+  --------------------------------------------------*/
+        const toggle = document.getElementById("theme-toggle");
+        function syncToggleLabel() {
+          if (!toggle) return;
+          const cur = root.dataset.theme === "light" ? "light" : "dark";
+          toggle.setAttribute(
+            "aria-label",
+            cur === "dark" ? "Switch to light theme" : "Switch to dark theme",
+          );
+        }
+        syncToggleLabel();
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            const next = root.dataset.theme === "light" ? "dark" : "light";
+            root.dataset.theme = next;
+            try {
+              localStorage.setItem("tk-theme", next);
+            } catch (e) {}
+            syncToggleLabel();
+            if (window.__canvasSetTheme) window.__canvasSetTheme(next);
+          });
+        }
+
+        /* -------------------------------------------------
+     MOBILE MENU (hamburger)
+  --------------------------------------------------*/
+        const navToggle = document.getElementById("nav-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        function setMenuOpen(open) {
+          document.body.classList.toggle("menu-open", open);
+          if (navToggle) {
+            navToggle.setAttribute("aria-expanded", String(open));
+            navToggle.setAttribute(
+              "aria-label",
+              open ? "Close menu" : "Open menu",
             );
-            copies++;
           }
-          track.style.setProperty("--marquee-copies", copies);
-        };
-        render();
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(render, 200);
+          if (mobileMenu) mobileMenu.setAttribute("aria-hidden", String(!open));
+        }
+        if (navToggle && mobileMenu) {
+          navToggle.addEventListener("click", () => {
+            setMenuOpen(!document.body.classList.contains("menu-open"));
+          });
+          mobileMenu.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => setMenuOpen(false));
+          });
+          document.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              document.body.classList.contains("menu-open")
+            ) {
+              setMenuOpen(false);
+              navToggle.focus();
+            }
+          });
+        }
+
+        /* -------------------------------------------------
+     BACK TO TOP
+  --------------------------------------------------*/
+        const toTop = document.getElementById("to-top");
+        if (toTop) {
+          const threshold = () => window.innerHeight * 0.8;
+          const onScroll = () => {
+            toTop.classList.toggle("is-visible", window.scrollY > threshold());
+          };
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+          toTop.addEventListener("click", () => {
+            if (window.__lenis) window.__lenis.scrollTo(0, { duration: 1.2 });
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        /* -------------------------------------------------
+     RAIL: active section highlight (works always)
+  --------------------------------------------------*/
+        const railLinks = Array.from(document.querySelectorAll(".rail a"));
+        const railMap = new Map(railLinks.map((a) => [a.dataset.rail, a]));
+        const sections = [
+          "hero",
+          "about",
+          "services",
+          "experience",
+          "education",
+          "contact",
+        ]
+          .map((id) => document.getElementById(id))
+          .filter(Boolean);
+
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((en) => {
+                if (en.isIntersecting) {
+                  railLinks.forEach((a) => a.classList.remove("active"));
+                  const link = railMap.get(en.target.id);
+                  if (link) link.classList.add("active");
+                }
+              });
+            },
+            { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+          );
+          sections.forEach((s) => io.observe(s));
+        }
+
+        /* -------------------------------------------------
+     COUNTERS (animate when in view; instant if reduced)
+  --------------------------------------------------*/
+        const counters = Array.from(document.querySelectorAll("[data-count]"));
+        function runCounter(el) {
+          const target = parseFloat(el.dataset.count);
+          if (reduceMotion) {
+            el.textContent = target;
+            return;
+          }
+          const dur = 1400;
+          const start = performance.now();
+          function tick(now) {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target);
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(tick);
+        }
+        if ("IntersectionObserver" in window) {
+          const cio = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((en) => {
+                if (en.isIntersecting) {
+                  runCounter(en.target);
+                  cio.unobserve(en.target);
+                }
+              });
+            },
+            { threshold: 0.6 },
+          );
+          counters.forEach((c) => cio.observe(c));
+        } else {
+          counters.forEach(runCounter);
+        }
+
+        /* -------------------------------------------------
+     SERVICES HEADING TYPEWRITER ROTATOR
+  --------------------------------------------------*/
+        (function () {
+          const el = document.querySelector("[data-words]");
+          if (!el) return;
+          const words = el.dataset.words
+            .split(",")
+            .map((s) => s.trim())
+            .filter(Boolean);
+          if (!words.length) return;
+          if (reduceMotion) {
+            el.textContent = words.join(", ");
+            return;
+          }
+          const TYPE_MS = 90,
+            ERASE_MS = 45,
+            HOLD_MS = 1400,
+            GAP_MS = 350;
+          let wi = 0;
+          const typeWord = (word) =>
+            new Promise((resolve) => {
+              let i = 0;
+              const tick = () => {
+                el.textContent = word.slice(0, ++i);
+                if (i < word.length) setTimeout(tick, TYPE_MS);
+                else resolve();
+              };
+              tick();
+            });
+          const eraseWord = () =>
+            new Promise((resolve) => {
+              const tick = () => {
+                const cur = el.textContent;
+                if (!cur) return resolve();
+                el.textContent = cur.slice(0, -1);
+                setTimeout(tick, ERASE_MS);
+              };
+              tick();
+            });
+          const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+          (async function loop() {
+            while (true) {
+              await typeWord(words[wi]);
+              await wait(HOLD_MS);
+              await eraseWord();
+              await wait(GAP_MS);
+              wi = (wi + 1) % words.length;
+            }
+          })();
+        })();
+
+        /* -------------------------------------------------
+     REDUCED MOTION / NO-GSAP: stop here.
+     Everything is already visible via CSS defaults.
+  --------------------------------------------------*/
+        if (reduceMotion || !hasGSAP) return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* -------------------------------------------------
+     LENIS smooth scroll (motion only)
+  --------------------------------------------------*/
+        let lenis = null;
+        if (typeof window.Lenis !== "undefined") {
+          lenis = new Lenis({
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            smoothTouch: false,
+          });
+          lenis.on("scroll", ScrollTrigger.update);
+          gsap.ticker.add((time) => lenis.raf(time * 1000));
+          gsap.ticker.lagSmoothing(0);
+          window.__lenis = lenis;
+        }
+
+        /* Anchor clicks -> lenis */
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            const id = a.getAttribute("href");
+            if (id.length < 2) return;
+            const target = document.querySelector(id);
+            if (!target) return;
+            e.preventDefault();
+            if (lenis) lenis.scrollTo(target, { offset: -10, duration: 1.2 });
+            else target.scrollIntoView({ behavior: "smooth" });
+          });
         });
-      })();
-      (function () {
-        const btn = document.querySelector(".to-top");
-        if (!btn) return;
-        const onScroll = () => {
-          btn.classList.toggle("is-visible", window.scrollY > 600);
-        };
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
-        btn.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+
+        /* -------------------------------------------------
+     SCROLL PROGRESS BAR
+  --------------------------------------------------*/
+        const progressEl = document.getElementById("progress");
+        if (progressEl) {
+          gsap.to(progressEl, {
+            scaleX: 1,
+            ease: "none",
+            scrollTrigger: { start: 0, end: "max", scrub: 0.3 },
+          });
+        }
+
+        /* -------------------------------------------------
+     HERO reveal
+  --------------------------------------------------*/
+        const heroChars = document.querySelectorAll("[data-hero]");
+        const heroFades = document.querySelectorAll("[data-hero-fade]");
+        gsap.set(heroChars, { yPercent: 115 });
+        gsap.set(heroFades, { autoAlpha: 0, y: 24 });
+
+        const heroTl = gsap.timeline({ delay: 0.25 });
+        heroTl
+          .to(heroChars, {
+            yPercent: 0,
+            duration: 1.1,
+            ease: "power4.out",
+            stagger: 0.1,
+          })
+          .to(
+            heroFades,
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.9,
+              ease: "power3.out",
+              stagger: 0.12,
+            },
+            "-=0.6",
+          );
+
+        /* Hero parallax-out on scroll */
+        gsap.to(".hero .wrap", {
+          yPercent: 18,
+          autoAlpha: 0.15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
         });
+        gsap.to(".scroll-hint", {
+          autoAlpha: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "30% top",
+            scrub: true,
+          },
+        });
+
+        /* -------------------------------------------------
+     GENERIC REVEAL-ON-SCROLL
+  --------------------------------------------------*/
+        gsap.utils.toArray(".reveal").forEach((el) => {
+          gsap.from(el, {
+            y: 40,
+            autoAlpha: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          });
+        });
+
+        /* Section titles: subtle lift */
+        gsap.utils.toArray(".section-title, .contact-title").forEach((el) => {
+          gsap.from(el, {
+            yPercent: 30,
+            autoAlpha: 0,
+            duration: 1,
+            ease: "power4.out",
+            scrollTrigger: { trigger: el, start: "top 88%", once: true },
+          });
+        });
+
+        /* Service + education card stagger removed — cards stay always visible. */
+
+        /* Portrait parallax */
+        document.querySelectorAll("[data-parallax]").forEach((el) => {
+          const amt = parseFloat(el.dataset.parallax) || 0.1;
+          gsap.to(el, {
+            yPercent: -amt * 100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        });
+
+        /* Stats subtle pop */
+        gsap.from(".stat", {
+          y: 30,
+          autoAlpha: 0,
+          stagger: 0.12,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: "#stats", start: "top 85%", once: true },
+        });
+
+        /* Horizontal work scrub removed — section deleted. */
+        /* Card tilt removed — keep cards visually stable. */
+
+        /* Magnetic CTA removed — keep the button visually stable. */
+
+        /* -------------------------------------------------
+     HERO CANVAS — animated flow-field dot grid (mauve)
+     (motion only; never on reduced/no-gsap path)
+  --------------------------------------------------*/
+        const canvas = document.getElementById("hero-canvas");
+        if (canvas && canvas.getContext) {
+          const ctx = canvas.getContext("2d", { alpha: true });
+          let w = 0,
+            h = 0,
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+          let particles = [];
+          let raf = null;
+          let running = true;
+          let t = 0;
+
+          const PALETTES = {
+            dark: {
+              stops: [
+                [227, 166, 188],
+                [206, 152, 173],
+                [169, 100, 126],
+              ],
+              dot: 0.5,
+              line: 0.16,
+            },
+            light: {
+              stops: [
+                [169, 100, 126],
+                [138, 63, 89],
+                [125, 47, 71],
+              ],
+              dot: 0.3,
+              line: 0.1,
+            },
+          };
+          let pal = PALETTES[root.dataset.theme === "light" ? "light" : "dark"];
+
+          function lerpColor(p) {
+            const s = pal.stops;
+            const seg = p < 0.5 ? 0 : 1;
+            const local = p < 0.5 ? p / 0.5 : (p - 0.5) / 0.5;
+            const a = s[seg],
+              b = s[seg + 1];
+            return [
+              Math.round(a[0] + (b[0] - a[0]) * local),
+              Math.round(a[1] + (b[1] - a[1]) * local),
+              Math.round(a[2] + (b[2] - a[2]) * local),
+            ];
+          }
+
+          /* exposed so the theme toggle can recolour live */
+          window.__canvasSetTheme = function (theme) {
+            pal = PALETTES[theme === "light" ? "light" : "dark"];
+          };
+
+          function resize() {
+            const rect = canvas.getBoundingClientRect();
+            w = rect.width;
+            h = rect.height;
+            canvas.width = Math.floor(w * dpr);
+            canvas.height = Math.floor(h * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            initParticles();
+          }
+
+          function initParticles() {
+            const density = Math.min(Math.max((w * h) / 14000, 50), 140);
+            particles = [];
+            for (let i = 0; i < density; i++) {
+              particles.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                cp: Math.random(),
+                r: Math.random() * 1.6 + 0.5,
+                sp: Math.random() * 0.4 + 0.15,
+              });
+            }
+          }
+
+          function field(x, y, time) {
+            const s = 0.0016;
+            return (
+              (Math.sin(x * s + time * 0.3) +
+                Math.cos(y * s * 1.3 - time * 0.22) +
+                Math.sin((x + y) * s * 0.6 + time * 0.15)) *
+              0.9
+            );
+          }
+
+          function draw() {
+            if (!running) return;
+            t += 0.01;
+            ctx.clearRect(0, 0, w, h);
+
+            for (let i = 0; i < particles.length; i++) {
+              const p = particles[i];
+              const ang = field(p.x, p.y, t) * Math.PI;
+              p.x += Math.cos(ang) * p.sp;
+              p.y += Math.sin(ang) * p.sp;
+
+              if (p.x < -10) p.x = w + 10;
+              if (p.x > w + 10) p.x = -10;
+              if (p.y < -10) p.y = h + 10;
+              if (p.y > h + 10) p.y = -10;
+
+              const c = lerpColor(p.cp);
+              ctx.beginPath();
+              ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${pal.dot})`;
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              ctx.fill();
+            }
+
+            ctx.lineWidth = 1;
+            for (let i = 0; i < particles.length; i += 2) {
+              const a = particles[i];
+              const ca = lerpColor(a.cp);
+              for (let j = i + 1; j < Math.min(i + 6, particles.length); j++) {
+                const b = particles[j];
+                const dx = a.x - b.x,
+                  dy = a.y - b.y;
+                const d2 = dx * dx + dy * dy;
+                if (d2 < 9000) {
+                  const alpha = (1 - d2 / 9000) * pal.line;
+                  ctx.strokeStyle = `rgba(${ca[0]},${ca[1]},${ca[2]},${alpha})`;
+                  ctx.beginPath();
+                  ctx.moveTo(a.x, a.y);
+                  ctx.lineTo(b.x, b.y);
+                  ctx.stroke();
+                }
+              }
+            }
+
+            raf = requestAnimationFrame(draw);
+          }
+
+          resize();
+          draw();
+          window.addEventListener("resize", () => {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            resize();
+          });
+
+          if ("IntersectionObserver" in window) {
+            const heroIO = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((en) => {
+                  if (en.isIntersecting && !running) {
+                    running = true;
+                    draw();
+                  } else if (!en.isIntersecting && running) {
+                    running = false;
+                    if (raf) cancelAnimationFrame(raf);
+                  }
+                });
+              },
+              { threshold: 0 },
+            );
+            heroIO.observe(document.getElementById("hero"));
+          }
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+              running = false;
+              if (raf) cancelAnimationFrame(raf);
+            } else if (!running) {
+              running = true;
+              draw();
+            }
+          });
+        }
+
+        /* refresh after fonts load to fix pinned measurements */
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => ScrollTrigger.refresh());
+        }
+        window.addEventListener("load", () => ScrollTrigger.refresh());
       })();
     </script>
   </body>
