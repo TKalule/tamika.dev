@@ -763,7 +763,7 @@ section {
 /* ---------- ABOUT ---------- */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
   gap: clamp(40px, 6vw, 90px);
   align-items: center;
 }
