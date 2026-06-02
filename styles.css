@@ -1001,31 +1001,30 @@ section {
 .svc-card {
   position: relative;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--bg-2);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 34px 32px 30px;
+  border-radius: 16px;
+  padding: 36px 32px 32px 36px;
   display: flex;
   flex-direction: column;
   min-height: 360px;
-  transition: border-color 0.3s var(--ease);
+  transition:
+    border-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
   will-change: transform;
 }
-.svc-card::after {
+.svc-card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: var(--grad-soft);
-  opacity: 0;
-  transition: opacity 0.4s var(--ease);
-  pointer-events: none;
+  inset: 12px auto 12px 0;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--grad);
+  box-shadow: 0 0 18px rgba(var(--glow-rgb), 0.45);
 }
 .svc-card:hover {
   border-color: var(--border-bright);
-}
-.svc-card:hover::after {
-  opacity: 1;
+  transform: translateY(-2px);
 }
 .svc-card > * {
   position: relative;
@@ -1073,12 +1072,22 @@ section {
 }
 .svc-card .card-list li {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 10px;
+  grid-template-columns: 16px 3rem 1fr;
+  gap: 12px;
   padding: 4px 0;
   font-size: 14px;
   color: var(--text-dim);
-  align-items: baseline;
+  align-items: center;
+}
+.svc-card .card-list li::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  -webkit-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M9 7h8v8'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M9 7h8v8'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 .svc-card .card-list .year {
   font-family: var(--font-mono);
@@ -1092,13 +1101,8 @@ section {
 }
 .svc-card .card-list li:not(:has(.year)) {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.svc-card .card-list li:not(:has(.year))::before {
-  content: "—";
-  color: var(--accent);
-  flex: none;
+  align-items: center;
+  gap: 12px;
 }
 
 /* ---------- GALLERY (portraits row) ---------- */
@@ -1145,7 +1149,7 @@ section {
   gap: 18px;
 }
 .edu-card {
-  background: var(--surface);
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 24px 26px;
